@@ -1,14 +1,14 @@
 output "namespace" {
-  description = "Kubernetes namespace where KubeGreen is deployed"
-  value       = helm_release.kubegreen.namespace
+  description = "The namespace where KubeGreen is deployed"
+  value       = module.kubegreen.namespace
 }
 
 output "release_name" {
-  description = "Helm release name of KubeGreen"
-  value       = helm_release.kubegreen.name
+  description = "The Helm release name of KubeGreen"
+  value       = module.kubegreen.release_name
 }
 
-output "chart_version" {
-  description = "Chart version of KubeGreen deployment"
-  value       = helm_release.kubegreen.version
+output "version" {
+  description = "The version of KubeGreen deployed"
+  value       = module.kubegreen.version
 }
