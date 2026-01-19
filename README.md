@@ -18,7 +18,6 @@ KubeGreen provides automated resource cleanup and pod hibernation for cost optim
 module "kubegreen" {
   source = "git::https://github.com/fabiocicerchia/terraform-helm-kubegreen.git?ref=main"
 
-  kubeconfig_path = "~/.kube/config"
   release_name    = "kube-green"
   namespace       = "kube-green"
 }
@@ -28,7 +27,6 @@ module "kubegreen" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| `kubeconfig_path` | Path to the kubeconfig file | `string` | `"~/.kube/config"` | no |
 | `release_name` | Helm release name for KubeGreen | `string` | `"kube-green"` | no |
 | `namespace` | Kubernetes namespace for KubeGreen | `string` | `"kube-green"` | no |
 | `chart_version` | Helm chart version (empty string for latest) | `string` | `""` | no |
@@ -56,8 +54,6 @@ module "kubegreen" {
 ```hcl
 module "kubegreen" {
   source = "git::https://github.com/fabiocicerchia/terraform-helm-kubegreen.git?ref=main"
-
-  kubeconfig_path = "~/.kube/config"
 }
 ```
 
@@ -66,8 +62,6 @@ module "kubegreen" {
 ```hcl
 module "kubegreen" {
   source = "git::https://github.com/fabiocicerchia/terraform-helm-kubegreen.git?ref=main"
-
-  kubeconfig_path = "~/.kube/config"
   
   values = {
     kubeGreen = {
@@ -83,7 +77,6 @@ module "kubegreen" {
 module "kubegreen" {
   source = "git::https://github.com/fabiocicerchia/terraform-helm-kubegreen.git?ref=main"
 
-  kubeconfig_path = "~/.kube/config"
   chart_version   = "0.8.0"
 }
 ```
