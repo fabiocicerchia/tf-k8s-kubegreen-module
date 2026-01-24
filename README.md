@@ -16,7 +16,7 @@ KubeGreen provides automated resource cleanup and pod hibernation for cost optim
 
 ```hcl
 module "kubegreen" {
-  source = "git::https://github.com/fabiocicerchia/terraform-helm-kubegreen.git?ref=main"
+  source = "fabiocicerchia/kubegreen/helm"
 
   release_name    = "kube-green"
   namespace       = "kube-green"
@@ -53,7 +53,7 @@ module "kubegreen" {
 
 ```hcl
 module "kubegreen" {
-  source = "git::https://github.com/fabiocicerchia/terraform-helm-kubegreen.git?ref=main"
+  source = "fabiocicerchia/kubegreen/helm"
 }
 ```
 
@@ -61,7 +61,7 @@ module "kubegreen" {
 
 ```hcl
 module "kubegreen" {
-  source = "git::https://github.com/fabiocicerchia/terraform-helm-kubegreen.git?ref=main"
+  source = "fabiocicerchia/kubegreen/helm"
   
   values = {
     kubeGreen = {
@@ -75,7 +75,7 @@ module "kubegreen" {
 
 ```hcl
 module "kubegreen" {
-  source = "git::https://github.com/fabiocicerchia/terraform-helm-kubegreen.git?ref=main"
+  source = "fabiocicerchia/kubegreen/helm"
 
   chart_version   = "0.8.0"
 }
