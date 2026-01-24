@@ -11,9 +11,9 @@ terraform {
 module "kubegreen" {
   source = "../"
 
-  release_name    = "kubegreen"
-  namespace       = "kubegreen-system"
-  chart_version   = ""
+  release_name  = "kubegreen"
+  namespace     = "kubegreen-system"
+  chart_version = ""
 
   values = yamlencode({})
 }
