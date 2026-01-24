@@ -1,10 +1,23 @@
-# KubeGreen Pod Hibernation Module
+# Terraform Module for KubeGreen
 
 Terraform module to deploy KubeGreen (automated resource cleanup and pod hibernation) on Kubernetes using Helm.
 
+## Why This Matters
+
+Cloud infrastructure running 24/7 wastes both money and energy, especially for non-production workloads. Development and testing environments often sit idle outside business hours, yet continue consuming electricity and generating carbon emissions.
+
+KubeGreen addresses this by automatically sleeping workloads during off-hours, enabling:
+
+* 💰 **Cost savings** of 60-80% on non-production infrastructure
+* 🌍 **Reduced carbon footprint** by stopping unnecessary compute
+* ⚡ **Lower energy waste** without manual intervention
+* 📅 **Automated scheduling** that matches actual usage patterns
+
+By implementing intelligent hibernation, organisations can significantly reduce their environmental impact while cutting cloud costs—a win for both sustainability and the bottom line.
+
 ## Overview
 
-KubeGreen provides automated resource cleanup and pod hibernation for cost optimization. It automatically sleeps and wakes workloads on schedules, reducing costs during off-hours.
+KubeGreen provides automated resource cleanup and pod hibernation for cost optimisation. It automatically sleeps and wakes workloads on schedules, reducing costs during off-hours.
 
 - **Pod Hibernation**: Automatically sleep and wake pods on schedule
 - **Cost Reduction**: Reduce costs by turning off non-production workloads
@@ -42,7 +55,7 @@ module "kubegreen" {
 
 ## Requirements
 
-- Terraform >= 1.0
+- Terraform >= 1.0 or OpenTofu >= 1.6
 - Helm >= 2.0
 - Kubernetes v1.24+
 - kubectl configured to access your cluster
@@ -122,3 +135,7 @@ kubectl logs -n kube-green -l app.kubernetes.io/name=kube-green
 - [KubeGreen GitHub](https://github.com/kube-green/kube-green)
 - [KubeGreen Documentation](https://kube-green.github.io/)
 - [KubeGreen CRD Reference](https://kube-green.github.io/getting-started/sleep-info-crd/)
+
+## License
+
+MIT
